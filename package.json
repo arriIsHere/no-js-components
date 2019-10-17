@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "A portfolio of nice little CSS components. These components will work with all modern browsers and require not javascript to use!",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve --port=3000"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bblais23/no-js-components.git"
@@ -14,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/bblais23/no-js-components/issues"
   },
-  "homepage": "https://github.com/bblais23/no-js-components#readme"
+  "homepage": "https://github.com/bblais23/no-js-components#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.9.0"
+  }
 }
