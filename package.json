@@ -1,0 +1,18 @@
+{
+  "name": "no-js-components",
+  "version": "1.0.0",
+  "description": "A portfolio of nice little CSS components. These components will work with all modern browsers and require not javascript to use!",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bblais23/no-js-components.git"
+  },
+  "keywords": [],
+  "author": "Ben Blais<me@benblais.dev>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/bblais23/no-js-components/issues"
+  },
+  "homepage": "https://github.com/bblais23/no-js-components#readme"
+}
