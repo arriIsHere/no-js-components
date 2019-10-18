@@ -1,0 +1,21 @@
+---
+layout: main.njk
+css: component.css
+---
+<main>
+	<h2>{{title}}</h2>
+	<p>{{description}}</p>
+	<template id="component">
+		{{content | safe}}
+	</template>
+	<section id="display-content"></section>
+	<script>
+	(() => {
+		const documentData = document.getElementById('component').content;
+		const contentContainer = document.getElementById('display-content');
+		const shadow = contentContainer.attachShadow({mode: 'closed'});
+
+		shadow.appendChild(documentData.cloneNode(true));
+	})();
+	</script>
+</main>
