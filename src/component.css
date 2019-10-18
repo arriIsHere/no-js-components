@@ -31,7 +31,6 @@ body {
 header {
 	top: 0;
 	position: sticky;
-	padding: 1em;
 	background-image: linear-gradient(
 		to top left,
 		#3F5EFB,
@@ -46,14 +45,18 @@ header {
 }
 
 header:hover {
-	animation: backgroundFlow 15s ease infinite;
+	animation: backgroundFlow 5s ease infinite;
 }
 
 header h2 {
+	display: block;
 	margin: 0;
+	padding: 0;
 }
 
 header h2 a {
+	display: block;
+	padding: 1em;
 	text-decoration: unset;
 	color: inherit;
 }
@@ -65,7 +68,7 @@ header h2 a::before {
 }
 
 header h2 a:hover::before {
-	padding-right: 2em;
+	padding-right: 1em;
 }
 
 main {
