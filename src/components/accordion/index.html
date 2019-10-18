@@ -1,0 +1,61 @@
+---
+layout: component.njk
+title: Accordion
+image: accordion.png
+description: Collapsible accordion for hidable content
+---
+<style type="text/css">
+	.accordion {
+		display: block;
+	}
+	.accordion input[type=checkbox] {
+		display: none;
+	}
+	.accordion .content {
+		max-height: 0;
+		overflow: hidden;
+	}
+	/* Make the carrot */
+	.accordion .header::after {
+		content: '⮞';
+		float: right;
+	}
+	.accordion input[type=checkbox]:checked ~ .content {
+		max-height: 15em;
+	}
+	.accordion input[type=checkbox]:checked ~ .header::after {
+		transform: rotate(90deg);
+	}
+
+	/* Visual Effects */
+	.accordion {
+		background: linear-gradient(
+			to top left,
+			#d4fc79,
+			#96e6a1
+		);
+		background-size: 400% 400%;
+		width: 100%;
+	}
+	.accordion .header {
+		margin: 0;
+		padding: 0.5em;
+	}
+	.accordion .content {
+		transition: max-height 0.5s ease-in-out;
+	}
+	.accordion .header::after {
+		transition: transform 0.25s ease-in-out;
+	}
+</style>
+<label class="accordion">
+	<input type="checkbox">
+	<h2 class="header">Accordion Header</h2>
+	<div class="content">
+		<p>
+			Web Components are a set of features that provide a standard component 
+			model for the Web allowing for encapsulation and interoperability of 
+			individual HTML elements.
+		</p>
+	</div>
+</label>
