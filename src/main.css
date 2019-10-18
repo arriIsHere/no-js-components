@@ -4,6 +4,23 @@
  * you may not use this file except in compliance with the License.
  */
 
+/* Page reset*/
+html, 
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/* While page layout */
+body {
+	display: grid;
+
+	grid-template-areas: 
+		"header"
+		"main";
+}
+
+/* Header Background Animation */
 @keyframes backgroundFlow {
 	0% {
 		background-position: 0% 50%;
@@ -17,33 +34,20 @@
 		background-position: 0% 50%;
 	}
 }
-
-html, 
-body {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	display: grid;
-
-	grid-template-areas: 
-		"header"
-		"main";
-}
-
 header {
+
 	padding: 10vh 1em;
 	background: linear-gradient(
-		to bottom right,
+		to top left,
 		#3F5EFB,
 		#FC466B,
 		#FF512F,
-		#3F5EFB,
 		#3F5EFB
 	);
 	background-size: 400% 400%;
 	color: #FFF;
+
+	/* Grid config */
 	grid-area: header;
 
 	animation: backgroundFlow 15s ease infinite; 
@@ -55,14 +59,12 @@ header h1 {
 	font-family: monospace;
 	font-size: 20vw;
 }
-
 header p {
 	font-size: 1.2rem;
 	text-align: right;
 	padding-right: 20vw;
 	font-style: italic;
 }
-
 main {
 	grid-area: main;
 }
