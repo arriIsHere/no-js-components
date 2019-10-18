@@ -8,12 +8,12 @@ css: component.css
 	<template id="component">
 		{{content | safe}}
 	</template>
-
+	<section id="display-content"></section>
+	
 	<!-- Source Code Section -->
 	{% highlight "html" %}
 	{{ content | safe }}
 	{% endhighlight %}
-	<section id="display-content"></section>
 	<script>
 	(() => {
 		const documentData = document.getElementById('component').content;
