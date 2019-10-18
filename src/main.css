@@ -67,11 +67,23 @@ header p {
 }
 main {
 	grid-area: main;
+
+	/* Position cards */
+	display: flex;
+	flex-wrap: wrap;
+	align-content: start;
+	justify-content: center;
 }
 
 
 /* Styling cards */
 main a {
+	
+	/* Visual: box shadow */
+	box-shadow: 0.25em 0.25em 0.5em 0.1em rgba(20, 20, 20, 0.6);
+
+	/* Spacing between cards */
+	margin: 1.5em;
 
 	/* Horizontally and vertically center text */
 	display: flex;
@@ -92,6 +104,10 @@ main a {
 
 	/* Tint background to make text show on background */
 	background-color: rgba(20, 20, 20, 0.6);
+	transition: background-color 0.5s ease-in-out;
+}
+main a:hover {
+	background-color: rgba(20, 20, 20, 0.9);
 }
 
 main a img {
