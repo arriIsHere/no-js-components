@@ -1,3 +1,23 @@
+/**
+ * Copyright 2019 Benjamin Blais
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ */
+
+@keyframes backgroundFlow {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 html,
 body {
 	padding: 0;
@@ -8,8 +28,48 @@ body {
 	font-size: 1.5rem;
 }
 
+header {
+	top: 0;
+	position: sticky;
+	padding: 1em;
+	background-image: linear-gradient(
+		to top left,
+		#3F5EFB,
+		#FC466B,
+		#FF512F,
+		#3F5EFB
+	);
+	background-position: 0% 50%;
+
+	background-size: 400% 400%;
+	color: #FFF;
+}
+
+header:hover {
+	animation: backgroundFlow 15s ease infinite;
+}
+
+header h2 {
+	margin: 0;
+}
+
+header h2 a {
+	text-decoration: unset;
+	color: inherit;
+}
+
+header h2 a::before {
+	content: '🡰';
+	font-size: 0.75em;
+	transition: padding 0.5s ease;
+}
+
+header h2 a:hover::before {
+	padding-right: 2em;
+}
+
 main {
-	padding: 2em;
+	padding: 0.5em 2em;
 }
 
 #display-content {
