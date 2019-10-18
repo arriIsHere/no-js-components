@@ -1,6 +1,7 @@
 ---
+eleventyExcludeFromCollections: true
 layout: main.njk
-title: "{0}.js"
+title: "ε.js"
 description: Snippets of HTML and CSS with no JS
 css: main.css
 ---
@@ -9,4 +10,11 @@ css: main.css
 	<p>{{description}}</p>
 </header>
 <main>
+{%- for snip in collections.all -%}
+	<a href="{{snip.url}}">
+		<h2>{{snip.title}}</h2>
+		<p>{{snip.description}}</p>
+		<img src="snip.image">
+	</a>
+{%- endfor -%}
 </main>
