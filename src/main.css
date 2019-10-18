@@ -68,3 +68,38 @@ header p {
 main {
 	grid-area: main;
 }
+
+
+/* Styling cards */
+main a {
+
+	/* Horizontally and vertically center text */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	/* So that the image positioning will work */
+	position: relative;
+	
+	/* Size item */
+	width: 20em;
+	height: 15em;
+
+	/* Rest for link */
+	text-decoration: unset;
+	color: white;
+
+	/* Tint background to make text show on background */
+	background-color: rgba(20, 20, 20, 0.6);
+}
+
+main a img {
+
+	/* Position the image as a pseudo background */
+	z-index: -1;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
