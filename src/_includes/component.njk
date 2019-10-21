@@ -21,7 +21,7 @@ css: component.css
 	(() => {
 		const documentData = document.getElementById('component').content;
 		const contentContainer = document.getElementById('display-content');
-		const shadow = contentContainer.attachShadow({mode: 'closed'});
+		const shadow = contentContainer.attachShadow({mode: 'open'});
 
 		shadow.appendChild(documentData.cloneNode(true));
 	})();
