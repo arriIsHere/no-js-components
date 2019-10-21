@@ -22,15 +22,18 @@ html,
 body {
 	padding: 0;
 	margin: 0;
+
+	height: 100vh;
 }
 
 body {
 	font-size: 1.5rem;
+
+	display: grid;
+	grid-template-rows: auto 1fr;
 }
 
 header {
-	top: 0;
-	position: sticky;
 	background-image: linear-gradient(
 		to top left,
 		#3F5EFB,
@@ -72,16 +75,35 @@ header h2 a:hover::before {
 }
 
 main {
+	display: grid;
+	overflow: hidden;
+	align-items: stretch;
+	grid-template-areas: 
+		"title"
+		"description"
+		"preview"
+		"code";
+
+	grid-template-rows: auto auto 10em 1fr;
+
 	padding: 0.5em 2em;
 }
 
+/* Text grid areas */
+main > h2 {
+	grid-area: title;
+}
+
+main > p {
+	grid-area: description;
+}
+
 #display-content {
-	width: 80vw;
-	height: 20em;
-	overflow: auto;
+	grid-area: preview;
 	border: 0.25em dashed #237;
 }
 
-pre {
-	width: calc(80vw - 1em);
+code[class*="language-"],
+pre[class*="language-"] {
+	grid-area: code;
 }
