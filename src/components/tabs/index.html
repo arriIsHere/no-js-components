@@ -1,0 +1,75 @@
+---
+title: Tabs
+image: tabs.png
+description: Switching ot different content in main
+---
+<style>
+	section {
+		display: none;
+	}
+
+	section:target {
+		display: block;
+	}
+
+	/* Styling */
+	nav a {
+		text-decoration: unset;
+		color: inherit;
+		display: inline-block;
+		padding: 0.5em;
+	}
+	nav {
+		background: linear-gradient(
+			to top left,
+			#d4fc79,
+			#96e6a1
+		);
+		background-size: 400% 400%;
+		width: 100%;
+	}
+	nav a:hover {
+		background: linear-gradient(
+			to top left,
+			#3F5EFB,
+			#FC466B
+		);
+	}
+</style>
+<nav>
+	<a href="#item1">Item 1</a>
+	<a href="#item2">Item 2</a>
+	<a href="#item3">Item 3</a>
+</nav>
+
+<section id="item1">
+	<p>
+		Many file cabinets incorporate a keyed lock to prevent unauthorized 
+		access to the documents being stored.  There are two types of locks.  
+		A "cam lock" is activated with a key that rotates the lock.  
+		A "plunger lock" is opened with a key but can be closed by merely 
+		depressing the body of the lock.  The plunger lock allows a user to 
+		quickly close and lock several cabinets in a short amount of time.
+	</p>
+</section>
+
+<section id="item2">
+	<p>
+		Some file cabinets have a metal plate or wire structure at the 
+		back of each drawer which is known as a follower block.
+		The follower block can be adjusted forward to reduce the length 
+		of the drawer so that the file folders contained within remain 
+		upright and at the front of the drawer for easier access.
+	</p>
+</section>
+
+<section id="item3">
+	<p>
+		Henry Brown, an American inventor, patented a 
+		"receptacle for storing and preserving papers" on 
+		November 2, 1886. This was a fire and accident safe 
+		container made of forged metal, which could be 
+		sealed with a lock. It was special in that it kept 
+		the papers separated.
+	</p>
+</section>
