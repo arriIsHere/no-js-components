@@ -23,6 +23,7 @@ body {
 	padding: 0;
 	margin: 0;
 
+	/* Content takes up the whole viewport */
 	height: 100vh;
 }
 
@@ -30,7 +31,9 @@ body {
 	font-size: 1.5rem;
 
 	display: grid;
-	grid-template-rows: auto 1fr;
+	grid-template-rows: 
+		auto /*Header*/
+		1fr; /*Main*/
 }
 
 header {
@@ -42,11 +45,9 @@ header {
 		#3F5EFB
 	);
 	background-position: 0% 50%;
-
 	background-size: 400% 400%;
 	color: #FFF;
 }
-
 header:hover {
 	animation: backgroundFlow 5s ease infinite;
 }
@@ -76,34 +77,55 @@ header h2 a:hover::before {
 
 main {
 	display: grid;
-	overflow: hidden;
 	align-items: stretch;
 	grid-template-areas: 
-		"title"
-		"description"
-		"preview"
-		"code";
+		"title       title"
+		"description description"
+		"preview     preview"
+		"code        code";
 
-	grid-template-rows: auto auto 10em 1fr;
+	grid-template-rows: auto auto minmax(auto, 10em) 1fr;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 0.5em;
 
 	padding: 0.5em 2em;
+	overflow: hidden;
 }
 
-/* Text grid areas */
+/* grid areas */
 main > h2 {
 	grid-area: title;
-}
 
+	/* Text formating */
+	margin: 0;
+	padding: 0.25em;
+}
 main > p {
 	grid-area: description;
-}
 
+	/* Text formating */
+	margin: 0;
+	padding-bottom: 1em;
+}
 #display-content {
 	grid-area: preview;
+
+	/* Decorate the preview */
 	border: 0.25em dashed #237;
 }
-
 code[class*="language-"],
 pre[class*="language-"] {
+	margin: 0;
 	grid-area: code;
+}
+
+/* Side by side for code and preview on widescreen monitors*/
+@media (min-width: 1280px) {
+	main {
+		grid-template-areas: 
+		"title       title"
+		"description description"
+		"preview     code"
+		"preview     code";
+	}
 }
