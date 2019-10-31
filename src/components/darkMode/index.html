@@ -19,7 +19,7 @@ selectable by tabbing/screenreaders
 
 /* Outline label when checkbox is selected */
 #darkmode:focus ~ main #darkmode-label span.slider {
-	outline: black dotted 1px;
+	outline: var(--foreground) dotted 1px;
 }
 
 #darkmode-label span.slider {
@@ -37,7 +37,7 @@ selectable by tabbing/screenreaders
 	/* Make it rounded */
 	border-radius: 0.75em;
 
-	background-color: grey;
+	background-color: var(--secondary-accent);
 
 	transition: background-color 0.5s ease-in-out;
 }
@@ -52,17 +52,39 @@ selectable by tabbing/screenreaders
 	width: 0.75em;
 	border-radius: 0.5em;
 
-	background: white;
+	background: var(--background);
 
 	transition: margin 0.5s ease-in-out;
 }
 
 /* When the box is checked change the appearance */
 #darkmode:checked ~ main #darkmode-label span.slider {
-	background-color: #428bff;
+	background-color: var(--accent);
 }
 #darkmode:checked ~ main #darkmode-label span.slider:before {
 	margin-left: 0.75em;
+}
+
+/* Light Theme*/
+#darkmode ~ main {
+	--background: #FFF;
+	--foreground: #000;
+	--accent: #428bff;
+	--secondary-accent: grey;
+
+	background: var(--background);
+	color: var(--foreground);
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+/* Dark theme */
+#darkmode:checked ~ main {
+	--background: #222;
+	--foreground: #FFF;
+	--accent: #bd7400;
+	--secondary-accent: grey;
 }
 </style>
 <input class="toggle" tabindex="0" id="darkmode" name="darkmode" type="checkbox">
@@ -72,5 +94,8 @@ selectable by tabbing/screenreaders
 		Dark Mode:
 		<span class="slider"></span>
 	</label>
+	<h1>Heading 1</h1>
+	<h2>Heading 2</h2>
+	<p>This is the content</p>
 	
 </main>
