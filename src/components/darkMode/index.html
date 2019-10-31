@@ -1,0 +1,101 @@
+---
+title: Dark Mode
+description: Enable page-wide dark Mode
+image: darkMode.png
+---
+<style>
+/* 
+For accessability, makes checkbox 
+selectable by tabbing/screenreaders 
+*/
+#darkmode {
+	opacity: 0;
+	height: 1px;
+	margin: 0;
+	padding: 0;
+
+	display: block;
+}
+
+/* Outline label when checkbox is selected */
+#darkmode:focus ~ main #darkmode-label span.slider {
+	outline: var(--foreground) dotted 1px;
+}
+
+#darkmode-label span.slider {
+	/* So that we can position the toggle dot */
+	position: relative;
+
+	display: block;
+	width: 1.5em;
+	height: 0.75em;
+	padding: 0.25em;
+
+	/* Behave like input */
+	cursor: pointer;
+
+	/* Make it rounded */
+	border-radius: 0.75em;
+
+	background-color: var(--secondary-accent);
+
+	transition: background-color 0.5s ease-in-out;
+}
+
+/* Slider Knob */
+#darkmode-label span.slider:before {
+	content: '';
+
+	margin: 0;
+	display: block;
+	height: 0.75em;
+	width: 0.75em;
+	border-radius: 0.5em;
+
+	background: var(--background);
+
+	transition: margin 0.5s ease-in-out;
+}
+
+/* When the box is checked change the appearance */
+#darkmode:checked ~ main #darkmode-label span.slider {
+	background-color: var(--accent);
+}
+#darkmode:checked ~ main #darkmode-label span.slider:before {
+	margin-left: 0.75em;
+}
+
+/* Light Theme*/
+#darkmode ~ main {
+	--background: #FFF;
+	--foreground: #000;
+	--accent: #428bff;
+	--secondary-accent: grey;
+
+	background: var(--background);
+	color: var(--foreground);
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+/* Dark theme */
+#darkmode:checked ~ main {
+	--background: #222;
+	--foreground: #FFF;
+	--accent: #bd7400;
+	--secondary-accent: grey;
+}
+</style>
+<input class="toggle" tabindex="0" id="darkmode" name="darkmode" type="checkbox">
+<main>
+	<!-- Label will be used as the content -->
+	<label id="darkmode-label" for="darkmode" class="toggle">
+		Dark Mode:
+		<span class="slider"></span>
+	</label>
+	<h1>Heading 1</h1>
+	<h2>Heading 2</h2>
+	<p>This is the content</p>
+	
+</main>
