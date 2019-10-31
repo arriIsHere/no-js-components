@@ -8,7 +8,7 @@ image: darkMode.png
 For accessability, makes checkbox 
 selectable by tabbing/screenreaders 
 */
-label.toggle input[type=checkbox] {
+input[type=checkbox].toggle {
 	opacity: 0;
 	height: 1px;
 	margin: 0;
@@ -18,7 +18,7 @@ label.toggle input[type=checkbox] {
 }
 
 /* Outline label when checkbox is selected */
-label.toggle input[type=checkbox]:focus ~ span.slider {
+input[type=checkbox].toggle:focus ~ label.toggle span.slider {
 	outline: black dotted 1px;
 }
 
@@ -58,16 +58,17 @@ label.toggle span.slider:before {
 }
 
 /* When the box is checked change the appearance */
-label.toggle input[type=checkbox]:checked ~ span.slider {
+input[type=checkbox].toggle:checked ~ label.toggle span.slider {
 	background-color: #428bff;
 }
-label.toggle input[type=checkbox]:checked ~ span.slider:before {
+input[type=checkbox].toggle:checked ~ label.toggle span.slider:before {
 	margin-left: 0.75em;
 }
 </style>
+<input class="toggle" tabindex="0" id="darkmode" name="darkmode" type="checkbox">
 <!-- Label will be used as the content -->
-<label class="toggle">
-	<input tabindex="0" name="checkbox" type="checkbox">
+<label for="darkmode" class="toggle">
+	Dark Mode:
 	<span class="slider"></span>
 </label>
 <main>
