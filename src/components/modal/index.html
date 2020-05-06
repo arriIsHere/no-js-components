@@ -1,0 +1,73 @@
+---
+layout: componentNoShadow.njk
+title: Modal Dialog
+image: modal.png
+description: Modal dialog display
+---
+<style>
+	section.modal-dialog {
+		position: fixed;
+		top: 10vw;
+		left: 25vw;
+		width: 50vw;
+		min-height: 10vh;
+		height: auto;
+		display: none;
+		z-index: 10;
+	}
+
+	section.modal-dialog:target {
+		display: block;
+	}
+
+	/* Styling */
+	section.modal-dialog {
+		background-color: #FFF;
+		padding: 2em;
+		box-shadow: 0.25em 0.25em 0.5em 0.25em #AAAAAA33;
+	}
+
+	a.modal-opener, a.modal-close {
+		text-decoration: none;
+	}
+
+	.modal-opener {
+		display: inline-block;
+		padding: 0.5em;
+		border-radius: 0.5em;
+		color: #FFF;
+		background-image: linear-gradient(
+			to top left,
+			#3F5EFB,
+			#FC466B,
+			#FF512F,
+			#3F5EFB
+		);
+		font-style: italic;
+		background-position: 0% 50%;
+		background-size: 400% 400%;
+	}
+
+	.modal-opener:hover {
+		animation: backgroundFlow 5s ease infinite;
+	}
+
+</style>
+
+<a class="modal-opener" href="#modal-1">Open Modal</a>
+
+<section class="modal-dialog" id="modal-1">
+	<a class="modal-close" href="#"><span aria-label="close" role="image">❌</span></a>
+	<h3>Modals</h3>
+	<p>
+		In user interface design for computer applications, 
+		a modal window is a graphical control element subordinate to 
+		an application's main window. It creates a mode that disables 
+		the main window but keeps it visible, with the modal window 
+		as a child window in front of it. Users must interact with 
+		the modal window before they can return to the parent application. 
+		This avoids interrupting the workflow on the main window. 
+		Modal windows are sometimes called heavy windows or modal dialogs 
+		because they often display a dialog box. 
+	</p>
+</section>
