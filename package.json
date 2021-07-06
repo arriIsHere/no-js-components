@@ -1,7 +1,7 @@
 {
   "name": "no-js-components",
   "version": "1.0.0",
-  "description": "A portfolio of nice little CSS components. These components will work with all modern browsers and require not javascript to use!",
+  "description": "A portfolio of nice little CSS components. These components will work with all modern browsers and require no JavaScript to use!",
   "main": "index.js",
   "scripts": {
     "build": "eleventy",
@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/bblais23/no-js-components#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1"
+    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.1"
   }
 }
