@@ -4,15 +4,44 @@ description: Input with a dropdown for phone numbers with country codes
 image: countryCodeInput.png
 ---
 <style>
+	.international-phone-input {
+		display: flex;
 
+		font-size: 1.5rem;
+
+		padding: 2rem;
+	}
+
+	/* Normalize layout for inputs across browsers */
+	.international-phone-input > select,
+	.international-phone-input > input[type=tel] {
+		font-size: 1em;
+		display: inline-block;
+		box-sizing: content-box;
+		margin: 0;
+		padding: 0;
+
+		border: 1px solid grey;
+	}
+
+	/* Hides the borders so that these both seem like the same input */
+	.international-phone-input > select {
+		border-right: none;
+		width: 2em;
+	}
+
+	.international-phone-input > input[type=tel] {
+		border-left: none;
+	}
 </style>
 <label class="international-phone-input">
-	<select class="international-phone-input">
-		<option value="+1">United States</option>
-		<option value="+353">Ireland</option>
-		<option value="+44">United Kingdom</option>
-		<option value="+64">New Zealand</option>
-		<option value="+61">Australia</option>
+	<select>
+		<option value="+1">🇺🇸 United States</option>
+		<option value="+1">🇨🇦 Canada</option>
+		<option value="+353">🇮🇪 Ireland</option>
+		<option value="+44">🇬🇧 United Kingdom</option>
+		<option value="+64">🇳🇿 New Zealand</option>
+		<option value="+61">🇦🇺 Australia</option>
 	</select>
 	<input 
 		type="tel" 
