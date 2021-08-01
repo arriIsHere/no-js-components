@@ -1,0 +1,23 @@
+---
+title: International Phone input
+description: Input with a dropdown for phone numbers with country codes
+image: countryCodeInput.png
+---
+<style>
+
+</style>
+<label class="international-phone-input">
+	<select class="international-phone-input">
+		<option value="+1">United States</option>
+		<option value="+353">Ireland</option>
+		<option value="+44">United Kingdom</option>
+		<option value="+64">New Zealand</option>
+		<option value="+61">Australia</option>
+	</select>
+	<input 
+		type="tel" 
+		pattern="\([0-9]{3}\)-[0-9]{3}-[0-9]{4}" 
+		placeholder="(555) 555-5555"
+		autocomplete="tel">
+</label>
+
